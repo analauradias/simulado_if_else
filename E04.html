@@ -1,16 +1,46 @@
 <script>
     //PROBLEMA: Vínculo empregatício
-    //Peça para o usuário informar qual a sua remuneração mensal (salário). Peça também para o usuário informar qual cargo que ocupa e quantas horas trabalha por dia. Considere 20 dias de trabalho no mês.
+    //Peça para o usuário informar qual a sua remuneração mensal (salário). Peça também para o usuário informar qual cargo que ocupa e quantas horas trabalha por dia. 
+    //Considere 20 dias de trabalho no mês.
     //Se o usuário for "Estagiário", e trabalhar até 6 horas diárias (inclusive), o programa deverá informar quanto recebe por hora.
-    //Se o usuário for "Estagiário", e trabalhar mais que 6 horas diárias, o programa deverá apresentar a mensagem "Precisa ser contratado", além de calcular um adicional de 50% (50/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
+    //Se o usuário for "Estagiário", e trabalhar mais que 6 horas diárias, o programa deverá apresentar a mensagem "Precisa ser contratado", 
+    //além de calcular um adicional de 50% (50/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
     //Se o usuário for "Programador" e trabalhar até 8 horas diárias (inclusive), o programa deverá informar quanto recebe por hora.
-    //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
+    //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) 
+    //na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
+    const salario = Number(prompt(`Insira o valor do seu salário.`).trim().replace(",","."));
+    const cargo = prompt(`Insira o seu cargo. Responda com E(estagiário) ou P(programador)`).trim().toLowerCase();
+    const horas = Number(prompt(`insira quantas horas você trabalha por dia`).trim());
+
+    const adicionalE = (salario*50)/100;
+    const totalE = salario+adicionalE;
+    const eAdicional = (totalE/20)*horas;
+    const adicionalP = (salario*30)/100;
+    const totalP = salario+adicionalP;
+    const total = (salario/20)*horas;
+    const pAdicional = (totalP/20)*horas;
 
 
     //PROCESSAMENTO
+    if(cargo == 'e'){
+        if(horas<=6){
+            alert(`Você recebe R$${total.toFixed(2).replace(".",",")} por hora`);
+        }
+        else if(horas>6){
+            alert(`Precisa ser contratado. Remuneração: R$${totalE.toFixed(2).replace(".",",")}. Você recebe R$${eAdicional.toFixed(2).replace(".",",")} `);
+        }
+    }
+    else if(p){
+        if(horas<=8){
+            alert(`Você recebe R$${total.toFixed(2).replace(".",",")} por hora`);
+        }
+        else if(horas>8){
+            alert(`Você deve receber R$${totalP.toFixed(2).replace(".",",")}. Você recebe R$${pAdicional} por hora`);
+        }
 
+    }
 
     //SAÍDA
 
