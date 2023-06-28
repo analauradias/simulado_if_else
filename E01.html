@@ -2,14 +2,24 @@
     //PROBLEMA: Big Brother Dev
     //Peça para o usuário informar a nota que o aluno que ajudou (TUTOR) obteve no terceiro trimestre.
     //Peça também para o usuário informar a nota que o aluno ajudado obteve no terceiro trimestre.
-    //Considere que, se o aluno ajudado obteve nota maior do que o aluno que ajudou (TUTOR), o programa apresentará na tela a mensagem "CRIA MAIOR QUE O CRIADOR" e também apresentará a nota do aluno ajudado.
-    //Contudo, caso o aluno que ajudou (TUTOR) obteve maior nota, bonifique-o com um adicional de 10% da nota do aluno ajudado, e o programa apresentará a mensagem "CONTINUE ENSINANDO!" e também apresentará a nota final do aluno que ajudou (TUTOR).
+    //Considere que, se o aluno ajudado obteve nota maior do que o aluno que ajudou (TUTOR), o programa apresentará na tela a mensagem 
+    //"CRIA MAIOR QUE O CRIADOR" e também apresentará a nota do aluno ajudado.
+    //Contudo, caso o aluno que ajudou (TUTOR) obteve maior nota, bonifique-o com um adicional de 10% da nota do aluno ajudado,
+    // e o programa apresentará a mensagem "CONTINUE ENSINANDO!" e também apresentará a nota final do aluno que ajudou (TUTOR).
 
     //ENTRADA
-
+    const tutor = Number(prompt(`Insira a nota que o tutor recebeu no terceiro trimestre`).trim().replace(",","."));
+    const ajudado = Number(prompt(`Insira a nota que o aluno ajudado recebeu no terceiro trimestre`).trim().replace(",","."));
 
     //PROCESSAMENTO
-
+    if(ajudado>tutor){
+        alert(`CRIA MAIOR QUE CRIADOR! Maior nota: ${ajudado.toFixed(2).replace(".",",")}`);
+    }
+    else if(tutor>ajudado){
+        const adicional = [ajudado*10]/100;
+        const notaTutor = tutor+adicional;
+        alert(`CONTINUE ENSINANDO! Nota: ${notaTutor.toFixed(2).replace(".",",")}`);
+    }
 
     //SAÍDA
 
