@@ -20,13 +20,13 @@
 
     //PROCESSAMENTO
     const totalCompra = (mamao*5)+(melancia*3)+(abacate*4)+(cebola*1.1);
-    const trocoFalta = dinheiro-totalCompra;
+    const troco = dinheiro-totalCompra;
 
     if(totalCompra>dinheiro){
-        alert(`Faltam R$${trocoFalta.toFixed(2).replace(".",",")}. Valor da compra: R$${totalCompra.toFixed(2).replace(".",",")}`);
+        alert(`Faltam R$${(totalCompra-dinheiro).toFixed(2).replace(".",",")}. Valor da compra: R$${totalCompra.toFixed(2).replace(".",",")}`);
     }
     else if(dinheiro>totalCompra){
-        alert(`Sobrou R$${trocoFalta.toFixed(2).replace(".",",")}. Valor da compra: R$${totalCompra.toFixed(2).replace(".",",")}`);
+        alert(`Sobrou R$${troco.toFixed(2).replace(".",",")}. Valor da compra: R$${totalCompra.toFixed(2).replace(".",",")}`);
     }
     else if(dinheiro==totalCompra){
         alert(`Não sobrou e nem faltou dinheiro. Valor da compra: R$${totalCompra.toFixed(2).replace(".",",")}`);

@@ -12,32 +12,31 @@
     //ENTRADA
     const salario = Number(prompt(`Insira o valor do seu salário.`).trim().replace(",","."));
     const cargo = prompt(`Insira o seu cargo. Responda com E(estagiário) ou P(programador)`).trim().toLowerCase();
-    const horas = Number(prompt(`insira quantas horas você trabalha por dia`).trim());
-
-    const adicionalE = (salario*50)/100;
-    const totalE = salario+adicionalE;
-    const eAdicional = (totalE/20)*horas;
-    const adicionalP = (salario*30)/100;
-    const totalP = salario+adicionalP;
-    const total = (salario/20)*horas;
-    const pAdicional = (totalP/20)*horas;
-
+    const horas = Number(prompt(`Insira quantas horas você trabalha por dia`).trim());
 
     //PROCESSAMENTO
+    const diasTrabalhados = 20;
+
     if(cargo == 'e'){
         if(horas<=6){
-            alert(`Você recebe R$${total.toFixed(2).replace(".",",")} por hora`);
+            const valorHora = salario/(horas*20);
+            alert(`Você recebe R$${valorHora.toFixed(2).replace(".",",")} por hora`);
         }
-        else if(horas>6){
-            alert(`Precisa ser contratado. Remuneração: R$${totalE.toFixed(2).replace(".",",")}. Você recebe R$${eAdicional.toFixed(2).replace(".",",")} `);
+        else{
+            const salarioCorrigido = salario*1.5;
+            const valorHora = salarioCorrigido/(horas*20)
+            alert(`Precisa ser contratado. Remuneração: R$${salarioCorrigido.toFixed(2).replace(".",",")}. Você recebe por hora R$${valorHora.toFixed(2).replace(".",",")} `);
         }
     }
-    else if(p){
+    else if('p'){
         if(horas<=8){
-            alert(`Você recebe R$${total.toFixed(2).replace(".",",")} por hora`);
+            const valorHora = salario/(horas*20);
+            alert(`Você recebe R$${valorHora.toFixed(2).replace(".",",")} por hora`);
         }
-        else if(horas>8){
-            alert(`Você deve receber R$${totalP.toFixed(2).replace(".",",")}. Você recebe R$${pAdicional} por hora`);
+        else{
+            const salarioCorrigido = salario*1.3;
+            const valorHora = salarioCorrigido/(horas*20);
+            alert(`Você deve receber R$${salarioCorrigido.toFixed(2).replace(".",",")}. Você recebe R$${valorHora} por hora`);
         }
 
     }
