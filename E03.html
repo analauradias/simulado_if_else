@@ -23,7 +23,7 @@
     //PROCESSAMENTO
     if(viagem == 'rs'){
         if(dinheiro>diasRs){
-            alert(`Boa viagem! Você poderá ficar ${diasRs} dias no destino. Custo da viagem: R$${rs.toFixed(2).replace(".",",")}`);
+            alert(`Boa viagem! Você poderá ficar ${dias} dias no destino. Custo da viagem: R$${diasRs.toFixed(2).replace(".",",")}`);
         }
         else if(dinheiro<diasRs){
             alert(`Sem férias! Estão faltando R$${faltaRs.toFixed(2).replace(".",",")} para realizar a viagem`);
@@ -31,7 +31,7 @@
     }
     else if(viagem == 'mg'){
         if(dinheiro>diasMg){
-            alert(`Boa viagem! Você poderá ficar ${diasMg} dias no destino. Custo da viagem: R$${mg.toFixed(2).replace(".",",")}`);
+            alert(`Boa viagem! Você poderá ficar ${dias} dias no destino. Custo da viagem: R$${diasMg.toFixed(2).replace(".",",")}`);
         }
         else if(dinheiro<diasMg){
             alert(`Sem férias! Estão faltando R$${faltaMg.toFixed(2).replace(".",",")} para realizar a viagem`);
